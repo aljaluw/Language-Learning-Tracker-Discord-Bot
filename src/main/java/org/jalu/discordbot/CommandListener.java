@@ -2,11 +2,13 @@ package org.jalu.discordbot;
 
 import com.google.gson.Gson;
 import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import okhttp3.*;
 import org.jetbrains.annotations.NotNull;
-import org.jalu.Model.Book;
+import org.jalu.model.Book;
 
 import java.awt.*;
 import java.io.IOException;
@@ -14,6 +16,20 @@ import java.io.IOException;
 public class CommandListener extends ListenerAdapter {
     private final OkHttpClient httpClient = new OkHttpClient();
     private static final String API_BASE_URL = "http://localhost:8080/books";
+
+    @Override
+    public void onSlashCommandInteraction(@NotNull SlashCommandInteractionEvent event) {
+        if (event.getName().equals("log")) {
+            OptionMapping mediaTypeOption = event.getOption("media-type");
+            OptionMapping titleOption = event.getOption("title");
+            OptionMapping amountOption = event.getOption("amount");
+            OptionMapping unitOption = event.getOption("unit");
+            OptionMapping dateOption = event.getOption("date");
+            OptionMapping commentOption = event.getOption("comment");
+            assert mediaTypeOption != null;
+            event.reply("media type: "+mediaTypeOption.getAsString()).queue();
+        }
+    }
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
@@ -33,6 +49,13 @@ public class CommandListener extends ListenerAdapter {
         } else if (args.length == 4 && args[0].equalsIgnoreCase("!characters-read")) {
             getTotalCharactersRead(event, args[1], args[2], args[3]);
         }
+    }
+
+    private void logMedia(SlashCommandInteractionEvent event) {
+        Request request = new Request.Builder()
+                .url(API_BASE_URL)
+                .build();
+
     }
 
     private void getAllBooks(MessageReceivedEvent event) {

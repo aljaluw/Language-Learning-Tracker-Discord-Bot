@@ -1,4 +1,4 @@
-package org.jalu.Model;
+package org.jalu.model;
 
 public class Book {
     private Long id;
