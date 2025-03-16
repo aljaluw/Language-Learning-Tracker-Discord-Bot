@@ -1,0 +1,12 @@
+2025-03-16 | GAME , Project Sekai , 30 , MINUTES
+2025-03-14 | VISUAL_NOVEL , Summer Pockets , 12421 , CHARACTERS
+2025-03-14 | TV_SHOW , A Place Further than the Universe , 12 , EPISODES
+2025-03-14 | VISUAL_NOVEL , Summer Pockets , 14222 , CHARACTERS
+2025-03-14 | VISUAL_NOVEL , Summer Pockets , 11321 , CHARACTERS
+2025-03-14 | VISUAL_NOVEL , Summer Pockets , 3142 , CHARACTERS
+2025-03-14 | TV_SHOW , Sword Art Online 2 , 2 , EPISODES
+2025-03-12 | MOVIE , Your Name , 120 , MINUTES
+2025-03-11 | TV_SHOW , Non Non Biyori , 2 , EPISODES
+2025-03-09 | READING , Kaguya-Sama , 200 , PAGES
+2025-03-09 | READING , Kaguya-Sama , 150 , PAGES
+2024-03-07 | READING , Kaguya-Sama , 50 , PAGES
